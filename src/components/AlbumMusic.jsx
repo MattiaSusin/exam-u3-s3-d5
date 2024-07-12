@@ -3,7 +3,7 @@ import { setCurrentSong, toggleLike } from "../redux/actions";
 import { Card, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const AlbumMusic = ({ song }) => {
+const AlbumMusic = ({ song }) => {                                              //!!!!!!USO DI  REDUX PER AVERE 3 STATE DIVERSI
   const dispatch = useDispatch();
   const likes = useSelector((state) => state.likes);
   const isLiked = likes.some((like) => like.id === song.id);
