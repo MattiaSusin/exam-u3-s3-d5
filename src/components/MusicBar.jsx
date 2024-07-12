@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { Container, Row, Col, ProgressBar, Image } from "react-bootstrap";
 import { Heart, HeartFill } from 'react-bootstrap-icons'; 
@@ -20,8 +19,8 @@ const MusicBar = () => {
       <Container fluid className="pageBG fixed-bottom bg-container pt-1">
         <Row className="h-100">
           <Col lg={10} className="offset-lg-2">
-            <p className="text-white text-center">
-              Select a song to play
+            <p className="text-white text-center pLoading">
+              Select your favourite song . . .
             </p>
           </Col>
         </Row>
@@ -55,9 +54,9 @@ const MusicBar = () => {
                 <Image src={prevIcon} alt="prev" className="mx-3" />
                 <Image src={playIcon} alt="play" className="mx-3" />
                 <Image src={nextIcon} alt="next" className="mx-3" />
-                <Image src={repeatIcon} alt="repeat" className="mx-3" />
+                <Image src={repeatIcon} alt="repeat" className="mx-3"/>
               </div>
-              <ProgressBar now={60} className="mt-3" />
+              <ProgressBar now={60} className="mt-3"/>
             </Col>
           </Row>
         </Col>
