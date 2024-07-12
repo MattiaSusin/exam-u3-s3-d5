@@ -1,0 +1,296 @@
+body {
+  background-color: #121212;
+}
+
+/*!!!!!!!SIDEBAR SECTION!!!!!!!!!!*/
+.navbar.fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 230px;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  background-color: black;
+  z-index: 1200;
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav a {
+  color: rgb(145, 145, 145) !important;
+  transition: 0.3s;
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav a:hover {
+  color: white !important;
+}
+
+.navbar.fixed-left .navbar-brand {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 3px;
+}
+
+.nav-btn {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nav-btn a {
+  color: rgb(145, 145, 145);
+  text-decoration: none;
+}
+
+.nav-link svg{
+  font-size: 1.4em;
+  align-items: center;
+  margin-left: 8px;
+}
+.navbar-brand{
+  margin-left: 10px;
+}
+.signup-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.signup-btn:hover {
+  color: white;
+  background-color: rgb(60, 211, 60);
+  border: 1px solid rgb(60, 211, 60);
+}
+
+.login-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.login-btn:hover {
+  color: black;
+  background-color: white;
+}
+
+@media screen and (max-width: 936px) {
+  #sidebar {
+    display: none;
+  }
+}
+
+#navbarNavAltMarkup{
+  display: flex;
+  align-items: flex-start;
+}
+.inputSearch{
+  width: 202px;
+  margin-left: 12px;
+}
+
+.nav-btn{
+  margin-left: 2px;
+}
+
+/*!!!!!!! BOTTOM PLAYER SECTION!!!!!!!!!!!!*/
+
+.bg-container {
+  height: 5.5rem;
+  background-color: #000000;
+}
+
+.playerControls{
+  width: 700px;
+  align-items: center;
+  margin-bottom: 33px;
+  
+}
+
+.playerControls div:first-of-type {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.playerControls  img {
+  width: 14px;
+  filter: brightness(60%);
+}
+
+.playerControls :hover {
+  filter: brightness(80%);
+  color: #ffffff !important;
+}
+
+.progress {
+  color: white;
+    background-color: #414141;
+    height: 3px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 390px;
+    margin-left: 149px;
+}
+
+.SongLive{
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  align-items: center;
+  width: 325px;
+}
+
+.iconsBar{
+  display: flex;
+  gap: 19px;
+}
+
+@media screen and (min-width: 1200px) {
+  .playerControls div:first-of-type {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}
+.inRiga{
+  display: flex;
+  justify-content:start;
+  width: 1596px;
+
+}
+
+.RowIcons{
+  align-items: center;
+  margin-top: 15px;
+}
+.ContRow{
+display: flex;
+justify-content: space-between;
+
+}
+
+/*!!!!!!!!!!MAIN PAGE SECTION!!!!!!!!!!!!!!!*/
+
+.mainLinks {
+  margin-top: 1.5rem;
+  justify-content: space-evenly;
+}
+
+.mainLinks a {
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  opacity: 0.3;
+  text-decoration: none;
+}
+
+.mainLinks a:hover {
+  text-decoration: none;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.imgLinks a p,
+.mainPage p {
+  padding-top: 8px;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+
+#rock,
+#pop,
+#hiphop {
+  color: white;
+  font-weight: 700;
+  padding-top: 50px;
+}
+
+#hipHopSection {
+  margin-bottom: 7rem;
+}
+
+.mainPage img {
+  width: 200px;
+}
+
+.cardAlbum{
+  object-fit: cover;
+  height: 340px;
+  background-color: transparent;
+  border: none;
+  width: 200px;
+}
+
+.imgCard{
+  width: 100%;
+  border-radius: 3%;
+
+}
+
+.bodyCard{
+  width: 216px;
+  height: 200px;
+}
+
+.textCard{
+height: 62px;
+}
+
+.mainPage{
+  height: 1444px;
+}
+
+
+
+
+.artist-image{
+
+  height: 60px;
+  margin-bottom: 30px;
+
+}
+
+.textArtist{
+  display: flex;
+ align-items: center;
+}
+
+.contTextArt{
+display: flex;
+gap: 30px;
+margin-bottom: 20px;
+}
+
+.btnplay{
+  border: none;
+  background-color: transparent;
+}
+
+.btnLike{
+  border: none;
+}
+
+svg{
+  width: 25px;
+  height: 30px;
+}
+
+.dettailsSong{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+
+.separated{
+  margin-bottom: 15px;
+}
