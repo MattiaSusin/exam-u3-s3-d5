@@ -1,32 +1,48 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useSelector } from 'react-redux'; 
-import AlbumMusic from './AlbumMusic';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchSongs } from '../redux/actions';
+import MusicSection from './MusicSection';
+import { Nav } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const MusicSection = ({ title, artist, sectionId }) => {
-  const songs = useSelector(state => state.search.songs[artist] || []);
+const MainSection = ({ searchQuery }) => {
+  const dispatch = useDispatch();
 
-  if (!songs.length) {
-    return (
-      <Container id={sectionId} className="my-4">
-        <h2>{title}</h2>
-        <p>No songs available for {artist}.</p>
-      </Container>
-    );
-  }
+  useEffect(() => {
+    const fetchAllSongs = async () => {
+      try {
+        await dispatch(fetchSongs('queen'));
+        await dispatch(fetchSongs('katyperry'));
+        await dispatch(fetchSongs('eminem'));
+      } catch (error) {
+        console.error("Error fetching songs: ", error);
+      }
+    };
+
+    fetchAllSongs();
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (searchQuery) {
+      dispatch(fetchSongs(searchQuery));
+    }
+  }, [dispatch, searchQuery]);
 
   return (
-    <Container id={sectionId} className="my-4">
-      <h2>{title}</h2>
-      <Row className="imgLinks py-3">
-        {songs.slice(0, 4).map(song => (
-          <Col key={song.id} xs={12} sm={6} lg={3}>
-            <AlbumMusic song={song} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <div className="mainPage col-md-9 offset-md-3">
+      <Nav className="mainLinks d-none d-md-flex">
+        <Nav.Link href="#">TRENDING</Nav.Link>
+        <Nav.Link href="#">PODCAST</Nav.Link>
+        <Nav.Link href="#">MOODS AND GENRES</Nav.Link>
+        <Nav.Link href="#">NEW RELEASES</Nav.Link>
+        <Nav.Link href="#">DISCOVER</Nav.Link>
+      </Nav>
+      {searchQuery && <MusicSection title="Search Results" artist={searchQuery} sectionId="searchSection" />}
+      <MusicSection title="Rock Classics" artist="queen" sectionId="rockSection" />
+      <MusicSection title="Pop Culture" artist="katyperry" sectionId="popSection" />
+      <MusicSection title="#HipHop" artist="eminem" sectionId="hipHopSection" />
+    </div>
   );
 };
 
-export default MusicSection;
+export default MainSection;
